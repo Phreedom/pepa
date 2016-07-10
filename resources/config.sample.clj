@@ -16,11 +16,14 @@
  ;; Virtual Network Printer
  :printing {:lpd {:enable false
                   :host "0.0.0.0"
-                  :port 6332}}
+                  :port 6332}
+            :ipp {:enable false
+                  :host "0.0.0.0"
+                  :port 631}}
  ;; Zeroconf announces services offered by Pepa in the network
  :zeroconf {:enable false
             ;; Modules to announce via zeroconf
-            :modules #{:lpd :web}
+            :modules #{:lpd :ipp :web}
             ;; Optional, allows to set the announced IP Address
             :ip-address nil}
  ;; Those origins' pages will appear in the Inbox

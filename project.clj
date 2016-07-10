@@ -16,7 +16,7 @@
                  [ring/ring-core "1.4.0"]
                  [ring/ring-json "0.4.0"]
                  
-                 [org.immutant/web "2.1.0"]
+                 [org.immutant/web "2.1.0" :exclusions [clj-tuple]]
                  [org.immutant/scheduling "2.1.0"]
 
                  [liberator "0.13"]
@@ -48,6 +48,7 @@
 
                  ;; Printing
                  [com.bevuta/lpd "0.1.0-SNAPSHOT"]
+                 [phreedom/ipp "0.1.0-SNAPSHOT"]
                  [javax.jmdns/jmdns "3.4.1"]]
   :exclusions [org.clojure/data.json
                log4j/log4j

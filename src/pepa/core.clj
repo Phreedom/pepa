@@ -9,6 +9,7 @@
             [pepa.processor.page-ocr :as page-ocr]
             [pepa.processor.page-renderer :as page-renderer]
             [pepa.printing :as printing]
+            [pepa.printing-ipp :as printing-ipp]
             [pepa.zeroconf :as zeroconf]
             [pepa.systemd :as systemd]
             [pepa.init :as init]
@@ -42,6 +43,9 @@
               [:config :db])
        :lpd (component/using
              (printing/make-lpd-component)
+             [:config :db])
+       :ipp (component/using
+             (printing-ipp/make-ipp-component)
              [:config :db])
        :zeroconf (component/using
                   (zeroconf/make-component)
