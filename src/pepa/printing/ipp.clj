@@ -30,10 +30,9 @@
         (do
           (assert (< 0 (:port ipp-config) 65535))
           (log/info ipp "Starting IPP Server")
-          (let [server (-> (ipp-server ipp ipp-config)
-                           (ipp/start-server))]
-            (assoc ipp
-                   :server server))))))
+          (assoc ipp
+                 :server (-> (ipp-server ipp ipp-config)
+                             (ipp/start-server)))))))
   (stop [ipp]
     (when-let [server (:server ipp)]
       (log/info ipp "Stopping IPP Server")

@@ -28,10 +28,9 @@
         (do
           (assert (< 0 (:port lpd-config) 65535))
           (log/info lpd "Starting LPD Server")
-          (let [server (-> (lpd-server lpd lpd-config)
-                           (lpd/start-server))]
-            (assoc lpd
-                   :server server))))))
+          (assoc lpd
+                 :server (-> (lpd-server lpd lpd-config)
+                             (lpd/start-server)))))))
   (stop [lpd]
     (when-let [server (:server lpd)]
       (log/info lpd "Stopping LPD Server")
