@@ -19,7 +19,7 @@
                   :port 6332}
             :ipp {:enable false
                   :host "0.0.0.0"
-                  :port 631}}
+                  :port 6311}}
  ;; Zeroconf announces services offered by Pepa in the network
  :zeroconf {:enable false
             ;; Modules to announce via zeroconf
